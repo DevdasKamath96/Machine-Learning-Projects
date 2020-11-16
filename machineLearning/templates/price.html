@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Check the Price of your car here</h2>
+    <form action='price' method='post'>
+        {% csrf_token %}
+        <input type='text' name='fueltype' placeholder="fuel type"><br>
+        <input type='text' name='aspiration' placeholder="aspiration"><br>
+        <input type='text' name='carbody' placeholder="car body"><br>
+        <input type='text' name='drivewheel' placeholder="drive wheel"><br>
+        <input type='text' name='enginelocation' placeholder="engine location"><br>
+        <input type='number' step="any" name='wheelbase' placeholder="wheel base"><br>
+        <input type='number' name='carlength' placeholder="car length"><br>
+        <input type='number' name='carwidth' placeholder="car width"><br>
+        <input type='number' name='curbweight' placeholder="curb weight"><br>
+        <input type='text' name='enginetype' placeholder="engine type"><br>
+        <input type='number' name='cylindernumber' placeholder="cylinder number"><br>
+        <input type='number' name='enginesize' placeholder="engine size"><br>
+        <input type='number' name='boreratio' placeholder="bore ratio"><br>
+        <input type='number' name='horsepower' placeholder="horse power"><br>
+        <input type='number' name='highwaympg' placeholder="highway mpg"><br>
+        <input type='submit'>
+    </form>
+    {% if price %}
+    <h2>The Price of your Car is :{{price}}</h2>
+    {% endif %}
+</body>
+
+</html>
